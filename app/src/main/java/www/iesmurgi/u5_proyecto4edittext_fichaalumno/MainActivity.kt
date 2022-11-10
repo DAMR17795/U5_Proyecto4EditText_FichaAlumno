@@ -12,23 +12,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         //Le ponemos los inputType
-        binding.etNombreAp.inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
-        binding.etCalle.inputType = InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
+        binding.etNombreAp.inputType = InputType.TYPE_CLASS_TEXT +InputType.TYPE_TEXT_VARIATION_PERSON_NAME + InputType.TYPE_TEXT_FLAG_CAP_WORDS
+        binding.etCalle.inputType =InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
         binding.etNumero.inputType = InputType.TYPE_CLASS_NUMBER
         binding.etCPostal.inputType = InputType.TYPE_CLASS_NUMBER
-        binding.etLocalidad.inputType = InputType.TYPE_CLASS_TEXT
-        binding.etCiudad.inputType = InputType.TYPE_CLASS_TEXT
+        binding.etLocalidad.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_FLAG_CAP_WORDS
+        binding.etCiudad.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_FLAG_CAP_WORDS
         binding.etTelefono.inputType = InputType.TYPE_CLASS_PHONE
         binding.etTelefonoUrgencias.inputType = InputType.TYPE_CLASS_PHONE
-        binding.etNombrePadre.inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
-        binding.etNombreMadre.inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
-        binding.etPagina.inputType = InputType.TYPE_TEXT_VARIATION_URI
+        binding.etNombrePadre.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_VARIATION_PERSON_NAME + InputType.TYPE_TEXT_FLAG_CAP_WORDS
+        binding.etNombreMadre.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_VARIATION_PERSON_NAME + InputType.TYPE_TEXT_FLAG_CAP_WORDS
+        binding.etPagina.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_VARIATION_URI
         binding.etFecha.inputType = InputType.TYPE_CLASS_DATETIME
-        binding.etAltura.inputType = InputType.TYPE_CLASS_NUMBER
-        binding.etDescripcion.inputType = InputType.TYPE_CLASS_TEXT
-        //No funciona desde el main, lo he hecho en el xml
-        //binding.etEmail.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
-        //binding.etAlergias.inputType = InputType.TYPE_TEXT_FLAG_MULTI_LINE
+        binding.etAltura.inputType = InputType.TYPE_CLASS_NUMBER + InputType.TYPE_NUMBER_FLAG_DECIMAL
+        binding.etDescripcion.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
+        binding.etEmail.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+        binding.etAlergias.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_FLAG_MULTI_LINE
         setContentView(binding.root)
     }
 }
