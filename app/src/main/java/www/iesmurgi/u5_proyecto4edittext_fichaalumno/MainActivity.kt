@@ -3,6 +3,7 @@ package www.iesmurgi.u5_proyecto4edittext_fichaalumno
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
+import android.view.View
 import android.widget.EditText
 import www.iesmurgi.u5_proyecto4edittext_fichaalumno.databinding.ActivityMainBinding
 
@@ -30,5 +31,9 @@ class MainActivity : AppCompatActivity() {
         binding.etAlergias.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_FLAG_MULTI_LINE
         binding.etPassword.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_VARIATION_PASSWORD
         setContentView(binding.root)
+
+
     }
+
+
 }
