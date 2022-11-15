@@ -30,35 +30,22 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         binding.etEmail.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
         binding.etAlergias.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_FLAG_MULTI_LINE
         binding.etPassword.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_VARIATION_PASSWORD
-        //hola
-
         binding.seekBar.setOnSeekBarChangeListener(this)
-
         setContentView(binding.root)
 
     }
-    private fun progreso() {
-        Toast.makeText(this, "Metodo en Progreso", Toast.LENGTH_SHORT).show()
-    }
 
-    private fun empezar() {
-        Toast.makeText(this, "Metodo en Empezar", Toast.LENGTH_SHORT).show()
-    }
-
-    private fun parar() {
-        Toast.makeText(this, "Metodo en Parar", Toast.LENGTH_SHORT).show()
-    }
     override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
         binding.sliderText.text=p1.toString();
-        progreso()
+        binding.txtEstado.setText("Toque de Seguimiento...");
     }
 
     override fun onStartTrackingTouch(p0: SeekBar?) {
-        empezar()
+        binding.txtEstado.setText("Arrastrando...");
     }
 
     override fun onStopTrackingTouch(p0: SeekBar?) {
-        parar()
+        binding.txtEstado.setText("Parado...");
     }
 
 
