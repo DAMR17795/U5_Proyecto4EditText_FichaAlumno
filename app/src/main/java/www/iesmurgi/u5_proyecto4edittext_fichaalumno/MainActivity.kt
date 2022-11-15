@@ -1,13 +1,13 @@
 package www.iesmurgi.u5_proyecto4edittext_fichaalumno
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
-import android.view.View
-import android.widget.EditText
+import android.widget.SeekBar
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import www.iesmurgi.u5_proyecto4edittext_fichaalumno.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +32,33 @@ class MainActivity : AppCompatActivity() {
         binding.etPassword.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_VARIATION_PASSWORD
         //hola
 
+        binding.seekBar.setOnSeekBarChangeListener(this)
+
         setContentView(binding.root)
 
+    }
+    private fun progreso() {
+        Toast.makeText(this, "Metodo en Progreso", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun empezar() {
+        Toast.makeText(this, "Metodo en Empezar", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun parar() {
+        Toast.makeText(this, "Metodo en Parar", Toast.LENGTH_SHORT).show()
+    }
+    override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+        binding.sliderText.text=p1.toString();
+        progreso()
+    }
+
+    override fun onStartTrackingTouch(p0: SeekBar?) {
+        empezar()
+    }
+
+    override fun onStopTrackingTouch(p0: SeekBar?) {
+        parar()
     }
 
 
