@@ -30,6 +30,15 @@ class MainActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener {
         binding.etEmail.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
         binding.etAlergias.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_FLAG_MULTI_LINE
         binding.etPassword.inputType = InputType.TYPE_CLASS_TEXT + InputType.TYPE_TEXT_VARIATION_PASSWORD
+        //Focus y setError
+        binding.etNombreAp.error = "Debe introducir el nombre"
+        binding.etNombreAp.requestFocus()
+        binding.etFecha.error = "Debe introducir la fecha de nacimiento"
+        binding.etFecha.requestFocus()
+        binding.etTelefono.error = "Debe introducir telefono"
+        binding.etTelefono.requestFocus()
+        binding.etPassword.error = "Debe introducir contraseña"
+        binding.etPassword.requestFocus()
         binding.seekBar.setOnSeekBarChangeListener(this)
         setContentView(binding.root)
 
